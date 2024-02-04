@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I wanna love you forever </title>
+    <link rel="stylesheet"href= "style.css">
+    <div class = "header">
+    <h1> <span class= "auto-input"></span></h1> 
+    </div>
+    <div class="card">
+        <div class = "back"> 
+            <img class = "image" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3E1azNsbm13aHBxYW50bms5NXZ6Zmpwd25qMTQ1MGI5MGVraThhdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W2PnVTZyl8Rc3X086R/giphy.gif" alt = "cute">
+        </div>
+        <div class = "front">
+        <div class =  "heartcontainer">
+            <div class = "cardheart-1"> </div>
+            <div class = "cardheart-2"> </div>
+            <div class = "cardheart-3"> </div>
+        </div>
+    </div>
+    <div class = "textContainer">
+        <p id="header"> Happy Valentine's Day! 💖 </p>
+        <p id="text"> As Valentine's Day approaches, I just wanted to say how much I've enjoyed our </p><p>conversations. Getting to know you has been a highlight for me, and I genuinely</p> <p>look forward to learning more about you. I hope that soon we can take our talks</p> <p>beyond the screen and share some moments in person. Wishing you a wonderful</p> <p>Valentine's Day filled with joy and warmth.</p>
+        <p id ="question"> <span class="paragraph"> </span> </p>
+        <div class='heart-like-button' onclick="clickedFunction()"></div>
+    </div>
+</div>
+
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var options = {
+    strings: ["To: Anh❤️","From: John👍", "Happy Valentines Day!"],
+    typeSpeed: 100,
+    backSpeed: 50,
+    loop: true
+};
+    let typed = new Typed(".auto-input",options)  
+
+    options = {
+    strings: ["Will you stay?","^1000 Will you ^1000 be my first, and eternally, ^1000 my only Valentine?"],
+    typeSpeed: 100,
+    backSpeed: 50,
+    loop: false
+    };
+
+    typed = new Typed(".paragraph", options)
+   
+   
+    </script>
+
+    <script src="script.js"></script>
+   
+</body>
+</html>

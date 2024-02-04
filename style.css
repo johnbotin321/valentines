@@ -1,0 +1,600 @@
+:root{
+
+--border-color: rgb(216, 205, 245);
+--background: rgb(255, 255, 255);
+--front-bg: rgb(216, 154, 231);
+--front-bg-darken: rgb(125, 182, 223);
+--shadow: rgb(0,0,0,0.1);
+--drop-shadow: rgb(0,0,0,0.5);
+--text: #331717;
+}
+html,
+body {
+  overflow: hidden;
+  background-color: rgb(247, 190, 244);
+  width:100%;
+  height:100%;
+  
+}
+
+  .header {
+    z-index: 4;
+    position: relative;
+    width: 600px; 
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Poiret One', Segoe UI Light, cursive;
+  }
+  
+  
+  .card{
+    z-index: 2;
+    position: relative;
+    width: 425px;
+    height: 300px;
+    border: 10px solid var(--border-color);
+    margin: 360px auto;
+    box-shadow: inset 10px 0px 15px 0px var(--shadow);
+    background-color: var(--background);    
+  }
+
+  .card .textContainer{
+  z-index: -2;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  } 
+
+  .card .textContainer #header{
+    font-size: 1.2rem;
+    line-height: 0.01em;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .card .textContainer #question{
+    font-size: 1.0rem;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+
+  .card p{
+    z-index: -2;
+    font-family: 'Poiret One', Segoe UI Light, cursive;
+    font-size: 0.7rem;
+    line-height: 0.5px;
+  color: var(--text);
+  text-align: left;
+  margin: 30px auto;
+
+  }
+
+  .card .front{
+z-index: 3;
+position: absolute;
+width: 100%;
+height: 100%;
+margin: -10px 0px 0px -10px;
+border: 10px solid var(--border-color);
+backface-visibility: hidden;
+background-color: var(--front-bg);
+background-size: contain;
+transform-style: preserve-3d;
+transform-origin: 50% 0%;
+transform: perspective(800px) rotateX(0deg);
+transition: all 0.8s ease-in-out;
+
+  }
+
+  .card:hover .front{
+    transform: perspective(800px) rotateX(170deg);
+  }
+  .card .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid var(--border-color);
+    margin: -10px 0px 0px -10px;
+    backface-visibility: visible;
+    filter: drop-shadow(2px 2px 4px var(--drop-shadow));
+    transform-style:preserve-3d;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg);
+    transition: all 0.8s ease-in-out;
+    background-color: var(--background);
+    box-shadow: 0 0 0 0 var(--shadow);
+
+
+  }
+  .card:hover .back{
+    transform: perspective(800px) rotateX(170deg);
+    box-shadow: 0px 5px 10px 0px var(--shadow), inset 2px 0px 15px 0px var(--shadow);
+
+  }
+
+  .card .back .image{
+    position: center;
+    width: 425px;
+    height: 300px;
+    margin: 0px 0px -10px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50x);
+    transform: rotate(180deg);
+  }
+
+  .heartcontainer{
+    position:relative;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+  }
+
+  .cardheart-1{
+    position: absolute;
+    background-color: rgb(190, 166, 246);
+    filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+  }
+
+  .cardheart-1:before,
+  .cardheart-1:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(190, 166, 246);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+  }
+
+  .cardheart-1:before{
+    top: -50px;
+  }
+  .cardheart-1:after{
+    left:50px;
+  }
+
+  .cardheart-2{
+    position: absolute;
+    background-color: rgb(213, 124, 240);
+    filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    top: 25px;
+    left: 11px;
+  }
+
+  .cardheart-2:before,
+  .cardheart-2:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(213, 124, 240);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+  }
+
+  .cardheart-2:before{
+    top: -40px;
+  }
+  .cardheart-2:after{
+    left:40px;
+  }
+
+  .cardheart-3{
+    position: absolute;
+    background-color: rgb(189, 120, 241);
+    filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    top: 49px;
+    left: 21px;
+  }
+
+  .cardheart-3:before,
+  .cardheart-3:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(189, 120, 241);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+  }
+
+  .cardheart-3:before{
+    top: -30px;
+  }
+  .cardheart-3:after{
+    left:30px;
+  }
+  
+  .heart {
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 200px;
+    top: 200px;
+  }
+  
+  .heart .left {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: -25px;
+    top: 0px;
+  }
+  
+  .heart .right {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: -25px;
+  }
+  
+
+  /*YES BUTTON*/
+   .heart-like-button {
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    bottom: -3%;
+    align-self:center ;
+    width: 90px;
+    height: 130px;
+
+  }
+   .heart-like-button:before {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 40px;
+    height: 65px;
+    border-radius: 40px 40px 0 0;
+    background-color: #574136;
+    content: "";
+    cursor: pointer;
+    transition: ease .4s;
+  }
+ .heart-like-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    width: 40px;
+    height: 65px;
+    border-radius: 40px 40px 0 0;
+    background-color: #574136;
+    content: "";
+    cursor: pointer;
+    transition: ease .4s;
+  }
+
+.heart-like-button.liked::before,
+.heart-like-button.liked::after {
+  background-color: #d65076;
+}
+/* heart beat animation*/
+
+.heart-like-button.liked {
+  animation: liked .5s infinite;
+}
+@keyframes liked {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/*
+========================================================
+========================================================
+*/
+
+
+
+
+
+  /*PHONES SCREEN*/
+@media (max-width:926px ){
+  html,
+body {
+  overflow: hidden;
+  background-color: rgb(247, 190, 244);
+  width: 100%;
+  height: 400px;
+  
+}
+
+
+  .header {
+    z-index: 4;
+    position: absolute;
+    left: -105px;
+    width: 600px; 
+    margin: auto;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Poiret One', Segoe UI Light, cursive;
+  }
+  
+  
+  .card{
+    z-index: 2;
+    position: absolute;
+    width: 350px;
+    height: 300px;
+    border: 10px solid var(--border-color);
+    margin: auto;
+    top: 450px;
+    left: 30px;
+    box-shadow: inset 10px 0px 15px 0px var(--shadow);
+    background-color: var(--background);    
+  }
+
+  .card .textContainer{
+  z-index: -2;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  } 
+
+  .card .textContainer #header{
+    font-size: 1.1rem;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .card .textContainer #question{
+    font-size: 0.8rem;
+  }
+
+  .card p{
+    z-index: -2;
+    font-family: 'Poiret One', Segoe UI Light, cursive;
+    font-size: 0.7rem;
+    line-height: 12px;
+  color: var(--text);
+  text-align: center;
+  bottom: 10%;
+  margin: 3px auto;
+
+  }
+
+  .card .front{
+z-index: 3;
+position: absolute;
+width: 100%;
+height: 100%;
+margin: -10px 0px 0px -10px;
+border: 10px solid var(--border-color);
+backface-visibility: hidden;
+background-color: var(--front-bg);
+background-size: contain;
+transform-style: preserve-3d;
+transform-origin: 50% 0%;
+transform: perspective(800px) rotateX(0deg);
+transition: all 0.8s ease-in-out;
+
+  }
+
+  .card:hover .front{
+    transform: perspective(800px) rotateX(170deg);
+  }
+  .card .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid var(--border-color);
+    margin: -10px 0px 0px -10px;
+    backface-visibility: visible;
+    filter: drop-shadow(2px 2px 4px var(--drop-shadow));
+    transform-style:preserve-3d;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg);
+    transition: all 0.8s ease-in-out;
+    background-color: var(--background);
+    box-shadow: 0 0 0 0 var(--shadow);
+
+
+  }
+  .card:hover .back{
+    transform: perspective(800px) rotateX(170deg);
+    box-shadow: 0px 5px 10px 0px var(--shadow), inset 2px 0px 15px 0px var(--shadow);
+
+  }
+
+  .card .back .image{
+    position: center;
+    width: 350px;
+    height: 300px;
+    margin: 0px 0px -10px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50x);
+    transform: rotate(180deg);
+  }
+
+  .heartcontainer{
+    position:relative;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+  }
+
+  .cardheart-1{
+    position: absolute;
+    background-color: rgb(190, 166, 246);
+    filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+  }
+
+  .cardheart-1:before,
+  .cardheart-1:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(190, 166, 246);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+  }
+
+  .cardheart-1:before{
+    top: -50px;
+  }
+  .cardheart-1:after{
+    left:50px;
+  }
+
+  .cardheart-2{
+    position: absolute;
+    background-color: rgb(206, 144, 244);
+    filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    top: 25px;
+    left: 11px;
+  }
+
+  .cardheart-2:before,
+  .cardheart-2:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(206, 144, 244);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+  }
+
+  .cardheart-2:before{
+    top: -40px;
+  }
+  .cardheart-2:after{
+    left:40px;
+  }
+
+  .cardheart-3{
+    position: absolute;
+    background-color: rgb(241, 177, 247);
+    filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    top: 49px;
+    left: 21px;
+  }
+
+  .cardheart-3:before,
+  .cardheart-3:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(241, 177, 247);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+  }
+
+  .cardheart-3:before{
+    top: -30px;
+  }
+  .cardheart-3:after{
+    left:30px;
+  }
+  
+  .heart {
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 200px;
+    top: 200px;
+  }
+  
+  .heart .left {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: -25px;
+    top: 0px;
+  }
+  
+  .heart .right {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: -25px;
+  }
+  
+
+  /*YES BUTTON*/
+   .heart-like-button {
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    bottom: 3%;
+    align-self:center ;
+    width: 90px;
+    height: 130px;
+
+  }
+   .heart-like-button:before {
+    position: absolute;
+    top: 0;
+    left: 42px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 42px;
+    height: 66px;
+    border-radius: 40px 40px 0 0;
+    background-color: #574136;
+    content: "";
+    cursor: pointer;
+    transition: ease .4s;
+  }
+ .heart-like-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    width: 42px;
+    height: 66px;
+    border-radius: 40px 40px 0 0;
+    background-color: #574136;
+    content: "";
+    cursor: pointer;
+    transition: ease .4s;
+  }
+
+}
+
+  @import url(https://fonts.googleapis.com/css?family=Poiret+One);
